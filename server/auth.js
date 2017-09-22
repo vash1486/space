@@ -33,7 +33,7 @@ module.exports = (app) => {
       return cb(null, decoded && decoded.user ? decoded.user : false);
     });
   }));
-
+/*
   passport.use(new FacebookStrategy({
       clientID: '',
       clientSecret: '',
@@ -48,10 +48,10 @@ module.exports = (app) => {
         if (err) { return done(err); }
         done(null, user);
       });
-      */
+      * /
     }
   ));
-
+*/
   app.all('*', (req, res, next) => {
     passport.authenticate('bearer', (err, user, info) => {
       if (err) return next(err);
